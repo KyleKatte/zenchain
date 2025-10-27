@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light mode colors from design tokens */
+  --color-background: #e6e7eb;
+  --color-surface: #e6e7eb;
+  --color-surface-raised: #f0f1f5;
+  --color-surface-depressed: #d1d3d9;
+  --color-text: #2c3e50;
+  --color-text-secondary: #5a6c7d;
+  --color-primary: #14b8a6;
+  --color-secondary: #10b981;
+  --color-accent: #06b6d4;
+}
+
+.dark {
+  /* Dark mode colors */
+  --color-background: #1e293b;
+  --color-surface: #1e293b;
+  --color-surface-raised: #293548;
+  --color-surface-depressed: #15202e;
+  --color-text: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-primary: #2dd4bf;
+  --color-secondary: #22c55e;
+  --color-accent: #22d3ee;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Neumorphic button style */
+.btn-neumorphic {
+  background: var(--color-surface);
+  box-shadow: 8px 8px 16px rgba(163, 177, 198, 0.6),
+    -8px -8px 16px rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.btn-neumorphic:hover {
+  box-shadow: 6px 6px 12px rgba(163, 177, 198, 0.7),
+    -6px -6px 12px rgba(255, 255, 255, 0.6);
+}
+
+.btn-neumorphic:active {
+  box-shadow: inset 4px 4px 8px rgba(163, 177, 198, 0.6),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.btn-neumorphic:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Neumorphic card */
+.card-neumorphic {
+  background: var(--color-surface);
+  box-shadow: 8px 8px 16px rgba(163, 177, 198, 0.6),
+    -8px -8px 16px rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Neumorphic input */
+.input-neumorphic {
+  background: var(--color-surface);
+  box-shadow: inset 4px 4px 8px rgba(163, 177, 198, 0.6),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 12px 16px;
+  border: none;
+  width: 100%;
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.input-neumorphic:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+
+
+
+
