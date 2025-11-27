@@ -20,6 +20,16 @@ const line =
   "\n===================================================================\n";
 
 if (!fs.existsSync(dir)) {
+  // In Vercel build environment, fhevm-hardhat-template may not be available
+  // Check if ABI files already exist, if so, skip generation
+  const abiPath = path.join(outdir, `${CONTRACT_NAMES[0]}ABI.ts`);
+  const addressesPath = path.join(outdir, `${CONTRACT_NAMES[0]}Addresses.ts`);
+  
+  if (fs.existsSync(abiPath) && fs.existsSync(addressesPath)) {
+    console.log(`${line}⚠️  Unable to locate ${rel}, but ABI files already exist. Skipping generation.${line}`);
+    process.exit(0);
+  }
+  
   console.error(
     `${line}Unable to locate ${rel}. Expecting <root>/${dirname}${line}`
   );
